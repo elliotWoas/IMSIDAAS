@@ -1,3 +1,4 @@
+/* fix img world with content */
 .hero__subtitle img {
   width: 2.3rem;
   height: 2.3rem;
@@ -21,6 +22,7 @@
   line-height: 2rem;
 }
 
+/* home img and video */
 .hero__img-box img,
 .hero__img-box video {
   width: 100%;
@@ -37,3 +39,4 @@
 .hero__img-box {
   padding-top: 2rem;
 }
+
