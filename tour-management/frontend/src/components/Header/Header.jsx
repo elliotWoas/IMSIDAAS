@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 
 // we do not have a logo for shop {mehdi :D}
 // import logo from "../../assets/images/logo.png";
-import "./header.css";
+import './header.css';
 
 const nav__links = [
   {
@@ -29,7 +29,7 @@ const Header = () => {
           <div className="nav__wrapper d-flex align-items-center justify-content-between">
             {/* ========= logo ========= */}
             <div className="logo">
-              {/*<img src="" alt="" />*/}
+              {/* <img src={logo} alt="" /> */}
             </div>
             {/* ========= logo end========= */}
 
@@ -40,10 +40,9 @@ const Header = () => {
                   <li className="nav__item" key={index}>
                     <NavLink
                       to={item.path}
-                      // className={(navClass) =>
-                      //     navClass.isActive ? "active__link" : ""
-                      // }
-                      className=""
+                      className={navClass =>
+                          navClass.isActive ? "active__link" : ""
+                      }
                     >
                       {item.display}
                     </NavLink>
@@ -58,7 +57,7 @@ const Header = () => {
                 <button className="btn secondary__btn ">
                   <Link to="/login">Login</Link>
                 </button>
-                <button className="btn priamry__btn ">
+                <button className="btn primary__btn">
                   <Link to="/register">Register</Link>
                 </button>
               </div>
