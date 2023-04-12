@@ -3,7 +3,7 @@ import { Container, Row } from "reactstrap";
 import { NavLink, Link } from "react-router-dom";
 
 // we do not have a logo for shop {mehdi :D}
-// import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/logo.png";
 import './header.css';
 
 const nav__links = [
@@ -20,7 +20,7 @@ const nav__links = [
     display: "Tours",
   },
 ];
-
+// logo and menu header
 const Header = () => {
   return (
     <header className="header">
@@ -29,7 +29,7 @@ const Header = () => {
           <div className="nav__wrapper d-flex align-items-center justify-content-between">
             {/* ========= logo ========= */}
             <div className="logo">
-              {/* <img src={logo} alt="" /> */}
+              <img src={logo} alt="" />
             </div>
             {/* ========= logo end========= */}
 
