@@ -26,6 +26,7 @@ const Header = () => {
     <header className="header">
       <Container>
         <Row>
+
           <div className="nav__wrapper d-flex align-items-center justify-content-between">
             {/* ========= logo ========= */}
             <div className="logo">
