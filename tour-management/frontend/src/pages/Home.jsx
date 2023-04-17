@@ -7,6 +7,8 @@ import heroVideo from "../assets/images/hero-video.mp4";
 import worldImg from "../assets/images/world.png";
 import Subtitle from "../shared/Subtitle";
 
+import SearchBar from "../shared/SearchBar";
+
 const Home = () => {
   return (
     <>
@@ -46,6 +48,8 @@ const Home = () => {
                 <img src={heroImg02} alt=""  />
               </div>
             </Col>
+            
+            <SearchBar />
           </Row>
         </Container>
       </section>
