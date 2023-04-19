@@ -12,13 +12,15 @@ import SearchBar from "../shared/SearchBar";
 const Home = () => {
   return (
     <>
+
+                {/*  hero section start */}
       <section>
         <Container>
           <Row>
             <Col lg="6">
             <div className="hero__content">
               <div className="hero__subtitle d-flex align-items-center ">
-                <Subtitle subtitle={"Know Before You Go"} />
+                <Subtitle subtitle={'Know Before You Go'} />
                 <img src={worldImg} alt="" />
               </div>
               <h1>
@@ -48,11 +50,11 @@ const Home = () => {
                 <img src={heroImg02} alt=""  />
               </div>
             </Col>
-            
             <SearchBar />
           </Row>
         </Container>
       </section>
+                        {/* hero section end */}
     </>
   );
 };
