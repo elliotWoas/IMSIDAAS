@@ -24,14 +24,13 @@ const Home = () => {
                 <img src={worldImg} alt="" />
               </div>
               <h1>
-                traveling opens the door to creating{" "}
-                <span className="highlight">memories</span>
+                Traveling opens the door to creating{" "}
+                <span className="highlight"> memories</span>
               </h1>
               <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima
                 nobis pariatur ea laboriosam sapiente dolor, modi aperiam
-                doloremque voluptatem a beatae earum, cupiditate adipisci culpa
-                sequi ipsam omnis animi sit?
+                doloremque voluptatem a beatae earum, cupiditate adipisci 
               </p>
             </div>
             </Col>
