@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import "./search-bar.css";
 import { Col, Form, FormGroup } from "reactstrap";
 
-//search bar component
+//search bar component and validation
 const SearchBar = () => {
   const locationRef = useRef("");
   const distanceRef = useRef(0);
