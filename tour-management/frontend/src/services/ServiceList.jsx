@@ -19,16 +19,21 @@ const servicesData = [
   },
   {
     imgUrl: customizationImg,
-    title: "customizationImg",
+    title: "Customization",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
   },
 ];
 
-import React from "react";
-
 const ServiceList = () => {
-  return <>
-  </>;
+  return (
+  <> 
+    {servicesData.map((item, index) => (
+      <Col lg="3" key={index}>
+        <ServiceCard item={item} />
+      </Col>
+    ))}
+  </>
+  );
 };
 
 export default ServiceList;

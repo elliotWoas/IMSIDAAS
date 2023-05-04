@@ -8,6 +8,7 @@ import worldImg from "../assets/images/world.png";
 import Subtitle from "../shared/Subtitle";
 
 import SearchBar from "../shared/SearchBar";
+import ServiceList from "../services/ServiceList";
 
 const Home = () => {
   return (
@@ -30,7 +31,7 @@ const Home = () => {
               <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima
                 nobis pariatur ea laboriosam sapiente dolor, modi aperiam
-                doloremque voluptatem a beatae earum, cupiditate adipisci 
+                doloremque voluptatem a beatae earum
               </p>
             </div>
             </Col>
@@ -53,7 +54,7 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-                        {/* hero section end */}
+                        {/* hero section start */}
 
           <section>
             <Container>
@@ -62,6 +63,7 @@ const Home = () => {
                   <h5 className="services__subtitle">What we serve</h5>
                   <h2 className="services__title">We offer our best services</h2>
                 </Col>
+                <ServiceList/>
               </Row>
             </Container>
           </section>

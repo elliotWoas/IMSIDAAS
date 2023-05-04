@@ -4,6 +4,7 @@
   height: 2.3rem;
 }
 
+/*  */
 .hero__content h1 {
   font-size: 2.5rem;
   font-weight: 600;
@@ -16,6 +17,7 @@
   color: var(--secondary-color);
 }
 
+/* description */
 .hero__content p {
   font-size: 1.1rem;
   color: var(--text-color);
