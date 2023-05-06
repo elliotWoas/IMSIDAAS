@@ -45,7 +45,7 @@ const tours = [
   },
   {
     id: "03",
-    title: "Snowy Mountains, Thailand",
+    title: "Thailand",
     city: "Thailand",
     distance: 500,
     price: 99,
@@ -63,7 +63,7 @@ const tours = [
   },
   {
     id: "04",
-    title: "Beautiful Sunrise, Thailand",
+    title: "Thailand",
     city: "Thailand",
     distance: 500,
     price: 99,
@@ -81,7 +81,7 @@ const tours = [
   },
   {
     id: "05",
-    title: "Nusa Pendia Bali, Indonesia",
+    title: "Indonesia",
     city: "Indonesia",
     distance: 500,
     price: 99,
@@ -135,7 +135,7 @@ const tours = [
   },
   {
     id: "08",
-    title: "Snowy Mountains, Thailand",
+    title: "Thailand",
     city: "Thailand",
     distance: 500,
     price: 99,
