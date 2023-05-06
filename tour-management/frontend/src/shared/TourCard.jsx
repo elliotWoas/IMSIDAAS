@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import "./tour-card.css";
 
 const TourCard = ({ tour }) => {
-  const { id, title, city, photo, price, avgRating, reviews } = tour;
+  const { id, title, city, photo, price, featured, avgRating, reviews } = tour;
 
   return (
     <div className="tour__card">
