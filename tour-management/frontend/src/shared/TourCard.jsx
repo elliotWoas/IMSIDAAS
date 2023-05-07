@@ -1,4 +1,4 @@
-// our featured tours, home page
+// featured tours, home page
 
 import React from "react";
 import { Card, CardBody } from "reactstrap";
@@ -38,9 +38,7 @@ const TourCard = ({ tour }) => {
               ${price} <span>/per person</span>
             </h6>
             <button className="btn booking__btn">
-              <Link to={`/tour/${id}`}>
-                <h6>Book Now</h6>
-              </Link>
+              <Link to={`/tour/${id}`}>Book Now</Link>
             </button>
           </div>
         </CardBody>
