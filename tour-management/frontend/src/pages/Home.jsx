@@ -84,7 +84,7 @@ const Home = () => {
             </Container>
            </section>
 
-          {/* ======= featured tour section start ======== */}       
+          {/* ======= featured tour section end ======== */}  
     </>              
   );
 };
