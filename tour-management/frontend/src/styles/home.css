@@ -62,3 +62,40 @@
   font-style: 2.3rem;
   font-weight: 500;
 }
+
+/* experience section */
+/* experience title */
+.experience__content h2{
+   
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+/* subtitle experience section*/
+.experience__content p {
+  font-size: 1.0rem;
+  color: var(--text-color);
+  margin-top: 1rem;
+}
+
+.counter__wrapper {
+  margin-top: 2.5rem;
+}
+
+.counter__box span{
+  width: 70px;
+  height: 70px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 10px 5px 10px 5px;
+}
+
+
+
