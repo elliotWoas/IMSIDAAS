@@ -105,3 +105,10 @@
 .experience__img img {
   width: 90%;
 }
+
+/* gallery start*/
+.gallery__title {
+  font-size: 2.3rem;
+  margin-bottom: 2.5rem;
+  margin-top: 1rem;
+}
