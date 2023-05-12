@@ -46,27 +46,26 @@
   padding-top: 2rem;
 }
 
-.services__subtitle{
+.services__subtitle {
   font-size: 2.2rem;
   font-weight: 500;
   color: #ee6e6e;
   font-family: var(--subtitle-font-name);
 }
 
-.services__title{
+.services__title {
   font-size: 2.5rem;
   font-weight: 500;
 }
 
-.featured__tour-title{
+.featured__tour-title {
   font-style: 2.3rem;
   font-weight: 500;
 }
 
 /* experience section */
 /* experience title */
-.experience__content h2{
-   
+.experience__content h2 {
   font-size: 2.5rem;
   margin-top: 1rem;
   font-weight: 500;
@@ -74,7 +73,7 @@
 
 /* subtitle experience section*/
 .experience__content p {
-  font-size: 1.0rem;
+  font-size: 1rem;
   color: var(--text-color);
   margin-top: 1rem;
 }
@@ -83,7 +82,7 @@
   margin-top: 2.5rem;
 }
 
-.counter__box span{
+.counter__box span {
   width: 70px;
   height: 70px;
   margin: auto;
@@ -97,5 +96,12 @@
   border-radius: 10px 5px 10px 5px;
 }
 
+.counter__box h6 {
+  font-size: 1.1rem;
+  margin-top: 0.7rem;
+  color: var(--text-color);
+}
 
-
+.experience__img img {
+  width: 90%;
+}

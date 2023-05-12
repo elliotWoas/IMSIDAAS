@@ -5,6 +5,7 @@ import heroImg from "../assets/images/hero-img01.jpg";
 import heroImg02 from "../assets/images/hero-img02.jpg";
 import heroVideo from "../assets/images/hero-video.mp4";
 import worldImg from "../assets/images/world.png";
+import experienceImg from "../assets/images/experience.png";
 import Subtitle from "../shared/Subtitle";
 
 import SearchBar from "../shared/SearchBar";
@@ -103,7 +104,6 @@ const Home = () => {
                 </p>
               </div>
               <div className="counter__wrapper d-flex align-center gap-5">
-
                 <div className="counter__box">
                   <span>12k+</span>
                   <h6>Successful Trip</h6>
@@ -118,7 +118,11 @@ const Home = () => {
                 </div>
               </div>
             </Col>
-            <Col lg="6"></Col>
+            <Col lg="6">
+              <div className="experience__img">
+                <img src={experienceImg} alt="" />
+              </div>
+            </Col>
           </Row>
         </Container>
       </section>
