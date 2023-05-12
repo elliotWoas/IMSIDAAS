@@ -112,3 +112,12 @@
   margin-bottom: 2.5rem;
   margin-top: 1rem;
 }
+
+/* zoom gallery image*/
+.masonry__img {
+  transition: 0.4s;
+}
+
+.masonry__img:hover {
+  transform: scale(1.2);
+}
