@@ -12,11 +12,13 @@ import SearchBar from "../shared/SearchBar";
 import ServiceList from "../services/ServiceList";
 import FeaturedTourList from "../components/Featured-tours/FeaturedTourList";
 import MasonryImagesGallery from "../components/Image-gallery/MasonryImagesGallery";
+import Testimoials from "../components/Testimoial/Testimoials";
+import Newsletter from "../shared/Newsletter";
 
 const Home = () => {
   return (
     <>
-      {/*  hero section start */}
+      {/* ========= hero section end ========= */}
       <section>
         <Container>
           <Row>
@@ -56,7 +58,7 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-      {/* hero section start */}
+      {/* ======== hero section end ======== */}
 
       <section>
         <Container>
@@ -139,12 +141,30 @@ const Home = () => {
               </h2>
             </Col>
             <Col lg="12">
-              <MasonryImagesGallery/>
+              <MasonryImagesGallery />
             </Col>
           </Row>
         </Container>
       </section>
       {/* ==========  gallery section end ==========*/}
+      {/* ========== testimonial section start  ==========*/}
+      <section>
+        <Container>
+          <Row>
+            <Col lg="12">
+              <Subtitle subtitle={"Fans love"} />
+              <h2 className="testimonial__title">
+                What our fans say about us{" "}
+              </h2>
+            </Col>
+            <Col lg="12">
+              <Testimoials />
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      {/* ========== testimonial section end  ==========*/}
+      <Newsletter />
     </>
   );
 };
