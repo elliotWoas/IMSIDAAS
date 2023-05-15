@@ -1,12 +1,11 @@
 .newsletter {
   background-color: #cae5f4;
   padding: 0;
-  margin: 3rem;
+  margin: -1rem;
 }
 
 .newsletter__img img {
   width: 100%;
-  /* width: auto; */
 }
 
 .newsletter__content {
@@ -29,6 +28,7 @@
 }
 
 .newsletter__input input {
+  background-color: #fff ;
   border: none;
   font-size: 1rem;
   color: var(--heading-color);
@@ -39,6 +39,7 @@
 }
 
 .newsletter__btn {
+  /* width: 10rem; */
   padding: 0.5rem 1.5rem !important;
   background: var(--secondary-color) !important;
   color: #fff !important;
@@ -47,6 +48,6 @@
 
 .newsletter__content p {
     color: var(--heading-color);
-    font-style: italic;
     font-size: 1.1rem;
+    font-style: italic;
 }
