@@ -11,16 +11,16 @@ const Newsletter = () => {
         <Row>
           <Col lg="6">
             <div className="newsletter__content">
-              <h2>Subscribe now to get useful traveling information.</h2>
+              <h4>Subscribe now to get useful traveling information.</h4>
 
               <div className="newsletter__input">
                 <input type="email" placeholder="Enter your email" />
                 <button className="btn newsletter__btn">Subscribe</button>
               </div>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dignissimos eius, fuga fugiat omnis iusto in blanditiis
-                perspiciatis quae repellendus, qui libero voluptatum. Sed,
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+                ipsum dolor sit amet consectetur adipisicing elit. Eum pariatur
+                in beatae facilis, obcaecati perferendis dignissimos
               </p>
             </div>
           </Col>

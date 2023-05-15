@@ -13,9 +13,9 @@
   padding: 50px 0;
 }
 
-.newsletter__content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+.newsletter__content h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .newsletter__input {
@@ -42,7 +42,7 @@
   padding: 0.5rem 1.5rem !important;
   background: var(--secondary-color) !important;
   color: #fff !important;
-  font-size: 1.1rem !important;
+  font-size: 0.9rem !important;
 }
 
 .newsletter__content p {
