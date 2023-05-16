@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Container, Row } from "reactstrap";
 import { NavLink, Link } from "react-router-dom";
 
 // we do not have a logo for shop {mehdi :D}
 import logo from "../../assets/images/logo.png";
-import './header.css';
+import "./header.css";
 
 const nav__links = [
   {
@@ -20,13 +20,34 @@ const nav__links = [
     display: "Tours",
   },
 ];
-// logo and menu header
+// logo , menu header and sticky Header Func
 const Header = () => {
+  //sticky Header Func
+  const headerRef = useRef(null);
+
+  const stickyHeaderFunc = () => {
+    window.addEventListener("scroll", () => {
+      if (
+        document.body.scrollTop > 80 ||
+        document.documentElement.scrollTop > 80
+      ) {
+        headerRef.current.classList.add("sticky__header");
+      } else {
+        headerRef.current.classList.remove("sticky__header");
+      }
+    });
+  };
+
+  useEffect(() => {
+    stickyHeaderFunc();
+
+    return window.removeEventListener("scroll", stickyHeaderFunc);
+  });
+
   return (
-    <header className="header">
+    <header className="header" ref={headerRef}>
       <Container>
         <Row>
-
           <div className="nav__wrapper d-flex align-items-center justify-content-between">
             {/* ========= logo ========= */}
             <div className="logo">
@@ -41,8 +62,8 @@ const Header = () => {
                   <li className="nav__item" key={index}>
                     <NavLink
                       to={item.path}
-                      className={navClass =>
-                          navClass.isActive ? "active__link" : ""
+                      className={(navClass) =>
+                        navClass.isActive ? "active__link" : ""
                       }
                     >
                       {item.display}
