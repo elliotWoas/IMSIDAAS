@@ -35,3 +35,9 @@
   margin-top: 1rem;
   margin-bottom: 2.5rem;
 }
+
+.tour__info p {
+  line-height: 30px;
+  font-size: 1rem;
+  color: var(--text-color);
+}
