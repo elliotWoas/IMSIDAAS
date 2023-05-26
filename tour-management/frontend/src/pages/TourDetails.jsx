@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import tourData from "../assets/data/tours";
 import calculateAvgRating from "../utils/avgRating";
 import avatar from "../assets/images/avatar.jpg";
+import Booking from "../components/Booking/Booking";
 
 const TourDetails = () => {
   const { id } = useParams();
@@ -33,13 +34,13 @@ const TourDetails = () => {
   const options = { day: "numeric", month: "long", year: "numeric" };
 
   // submit request to the server
-  const submitHandler = e => {
-    e.preventDefault()
-    const reviewText = reviewMsgRef.current.value
+  const submitHandler = (e) => {
+    e.preventDefault();
+    const reviewText = reviewMsgRef.current.value;
 
-    alert(`${reviewText}, ${tourRating}`)
+    alert(`${reviewText}, ${tourRating}`);
     // later will call our API
-  }
+  };
   return (
     <>
       <section>
@@ -51,13 +52,14 @@ const TourDetails = () => {
 
                 <div className="tour__info">
                   <h2>{title}</h2>
+
                   <div className="d-flex align-items-center gap-5">
                     <span className="tour__rating d-flex align-items-center gap-1">
                       <i
                         class="ri-star-s-fill"
                         style={{ color: "var(--secondary-color)" }}
                       ></i>{" "}
-                      {calculateAvgRating === 0 ? null : avgRating}
+                      {avgRating === 0 ? null : avgRating}
                       {totalRating === 0 ? (
                         "Not rated"
                       ) : (
@@ -155,6 +157,9 @@ const TourDetails = () => {
                 </div>
                 {/* ========== tour reviws section end ========== */}
               </div>
+            </Col>
+            <Col lg="4">
+              <Booking tour={tour} avgRating={avgRating} />
             </Col>
           </Row>
         </Container>
