@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import tourData from "../assets/data/tours";
 import calculateAvgRating from "../utils/avgRating";
 import avatar from "../assets/images/avatar.jpg";
-import Booking from "../components/Booking/Booking";
+import Booking from "../components/booking/Booking";
 
 const TourDetails = () => {
   const { id } = useParams();
@@ -84,7 +84,7 @@ const TourDetails = () => {
                       <i class="ri-map-pin-time-line"></i> {distance} k/m
                     </span>
                     <span>
-                      <i class="ri-group-line"></i> {maxGroupSize} people{" "}
+                      <i class="ri-group-line"></i> {maxGroupSize} people
                     </span>
                   </div>
                   <h5>Description</h5>
@@ -129,7 +129,7 @@ const TourDetails = () => {
                   </Form>
 
                   <ListGroup className="user__reviews">
-                    {reviews?.map((review) => (
+                    {reviews?.map(review => (
                       <div className="review__item">
                         <img src={avatar} alt="" />
 
