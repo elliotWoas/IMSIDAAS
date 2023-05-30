@@ -74,8 +74,8 @@ const Header = () => {
             </div>
             {/* ========= menu end========= */}
 
-            <div className="nav__right d-flex align-item-center gap-4">
-              <div className="nav__btns d-flex align-item-center gap-4">
+            <div className="nav__right d-flex align-item-center gap-3">
+              <div className="nav__btns d-flex align-item-center gap-3">
                 <button className="btn secondary__btn ">
                   <Link to="/login">Login</Link>
                 </button>
