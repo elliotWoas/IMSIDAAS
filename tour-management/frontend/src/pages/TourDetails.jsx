@@ -6,6 +6,7 @@ import tourData from "../assets/data/tours";
 import calculateAvgRating from "../utils/avgRating";
 import avatar from "../assets/images/avatar.jpg";
 import Booking from "../components/booking/Booking";
+import Newsletter from "../shared/Newsletter"
 
 const TourDetails = () => {
   const { id } = useParams();
@@ -144,7 +145,7 @@ const TourDetails = () => {
                                 )}
                               </p>
                             </div>
-                            <span className="d-flex align-items-center">
+                            <span className="d-flex align-items-center ">
                               5 <i class="ri-star-s-fill"></i>
                             </span>
                           </div>
@@ -164,6 +165,7 @@ const TourDetails = () => {
           </Row>
         </Container>
       </section>
+      <Newsletter />
     </>
   );
 };
