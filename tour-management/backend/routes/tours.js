@@ -5,5 +5,7 @@ const router = express.Router();
 
 // create new tour
 router.post("/", createTour);
+// update the tour
+router.put("/:id", updateTour);
 
 export default router;
