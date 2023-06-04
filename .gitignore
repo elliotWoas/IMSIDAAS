@@ -1,1 +1,3 @@
 /tour-management/frontend/node_modules/
+/tour-management/backend/node_modules/
+.env
