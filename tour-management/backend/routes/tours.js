@@ -11,5 +11,7 @@ router.put("/:id", updateTour);
 router.delete("/:id", deleteTour);
 // get single tour
 router.get("/:id", getSingleTour);
+// get all tour
+router.get("/", getAllTour);
 
 export default router;

@@ -78,3 +78,27 @@ export const getSingleTour = async (req, res) => {
     });
   }
 };
+// getAll tour
+export const getAllTour = async (req, res) => {
+  //for pagination
+  const page = parseInt(req.query.page);
+
+  console.log(page);
+  try {
+    const tours = await Tour.find({})
+      .skip(page * 8)
+      .limit(8);
+
+    res.status(200).json({
+      success: true,
+      count: tours.length,
+      message: "Successful",
+      data: tours,
+    });
+  } catch (err) {
+    res.status(404).json({
+      success: false,
+      message: "not found",
+    });
+  }
+};
