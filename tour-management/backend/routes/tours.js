@@ -9,5 +9,7 @@ router.post("/", createTour);
 router.put("/:id", updateTour);
 // delete the tour
 router.delete("/:id", deleteTour);
+// get single tour
+router.get("/:id", getSingleTour);
 
 export default router;
