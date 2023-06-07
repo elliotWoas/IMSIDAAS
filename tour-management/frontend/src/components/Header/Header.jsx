@@ -84,7 +84,7 @@ const Header = () => {
                 </button>
               </div>
               <span className="mobile__menu">
-                <i className="ri-menu-line"></i>
+                <i class="ri-menu-line"></i>
               </span>
             </div>
           </div>
