@@ -106,8 +106,8 @@ export const getAllTour = async (req, res) => {
 // get tour by search
 export const getTourBySearch = async (req, res) => {
   const city = new RegExp(req.query.city, "i");
-  const distance = RegExp(req.query.distance);
-  const maxGroupSize = RegExp(req.query.maxGroupSize);
+  const distance = parseInt(req.query.distance);
+  const maxGroupSize = parseInt(req.query.maxGroupSize);
 
   try {
     // gte means greater than equal
