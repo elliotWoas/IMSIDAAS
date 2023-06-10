@@ -7,6 +7,7 @@ import {
   getAllTour,
   getTourBySearch,
   getFeaturedTours,
+  getTourCount,
 } from "../controllers/tourController.js";
 
 const router = express.Router();
@@ -24,5 +25,6 @@ router.get("/", getAllTour);
 //get tour by search
 router.get("/search/getTourBySearch", getTourBySearch);
 router.get("/search/getFeaturedTours", getFeaturedTours);
+router.get("/search/getTourCount", getTourCount);
 
 export default router;
