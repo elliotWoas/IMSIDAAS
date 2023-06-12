@@ -5,6 +5,7 @@ import jwt from "jsonwebtoken";
 //user registeration
 export const register = async (req, res) => {
   try {
+    //hashing password
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(req.body.password, salt);
 
@@ -23,4 +24,30 @@ export const register = async (req, res) => {
       .status(500)
       .json({ success: false, message: "failed to register. try again" });
   }
+};
+
+//user login
+export const login = async (req, res) => {
+  const email = req.body.email;
+  try {
+    const user = await User.findOne({ email });
+
+    // if user doesn't exist
+    if (!user) {
+      return res
+        .status(404)
+        .json({ success: false, message: "User not found" });
+    }
+    // if user is exist then check the password or compare the password
+    const checkCorrectPassword = bcrypt.compare(
+      req.body.password,
+      user.password
+    );
+    //if password is incorrect
+    if (!checkCorrectPassword) {
+      return res
+        .status(401)
+        .json({ success: false, message: "Incorrect email or password" });
+    }
+  } catch (err) {}
 };
