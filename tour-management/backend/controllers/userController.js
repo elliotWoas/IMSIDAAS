@@ -58,3 +58,21 @@ export const deleteUser = async (req, res) => {
     });
   }
 };
+// getSingle User
+export const getSingleUser = async (req, res) => {
+  const id = req.params.id;
+  try {
+    const user = await User.findById(id);
+
+    res.status(200).json({
+      success: true,
+      message: "Successful",
+      data: user,
+    });
+  } catch (err) {
+    res.status(404).json({
+      successs: false,
+      message: "not found",
+    });
+  }
+};
