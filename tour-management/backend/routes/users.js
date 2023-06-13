@@ -14,6 +14,7 @@ router.put("/:id", updateUser);
 router.delete("/:id", deleteUser);
 // get single user
 router.get("/:id", getSingleUser);
-
+// get all users
+router.get("/", getAllUser);
 
 export default router;
