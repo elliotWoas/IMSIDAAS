@@ -10,6 +10,8 @@ const router = express.Router();
 
 // update the user
 router.put("/:id", updateUser);
+// delete the user
+router.delete("/:id", deleteUser);
 
 
 export default router;
