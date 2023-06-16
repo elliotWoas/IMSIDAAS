@@ -39,7 +39,7 @@ export const login = async (req, res) => {
         .json({ success: false, message: "User not found" });
     }
     // if user is exist then check the password or compare the password
-    const checkCorrectPassword = bcrypt.compare(
+    const checkCorrectPassword = await bcrypt.compare(
       req.body.password,
       user.password
     );
@@ -59,20 +59,22 @@ export const login = async (req, res) => {
     );
 
     // set token in the browser cookies and send the response to the client
-    res.cookie("accessToken", token, {
-      httpOnly: true,
-      expires: token.expiresIn,
-    })
-    .status(200).json({
-      success: true,
-      message: "Successfully login",
-      data: { ...rest },
-    })
+    res
+      .cookie("accessToken", token, {
+        httpOnly: true,
+        expires: token.expiresIn,
+      })
+      .status(200)
+      .json({
+        token,
+        success: true,
+        data: { ...rest },
+        role,
+      });
   } catch (err) {
     res.status(500).json({
       success: false,
-      message: "Failed to login"
-    })
+      message: "Failed to login",
+    });
   }
-  
 };
