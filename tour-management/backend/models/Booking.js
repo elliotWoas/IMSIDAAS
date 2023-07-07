@@ -1,29 +1,36 @@
 //is not true it's have to changes
 import mongoose from "mongoose";
 
-const reviewSchema = new mongoose.Schema(
+const bookingSchema = new mongoose.Schema(
   {
-    productId: {
-      type: mongoose.Types.ObjectId,
-      ref: "Tour",
+    userId: {
+      type: String,
     },
-    username: {
+    userEmail: {
+      type: String,
+    },
+    tourName:{
+      type:String,
+      required: true,
+    },
+    fullName: {
       type: String,
       required: true,
     },
-    reviewText: {
-      type: String,
-      required: true,
-    },
-    rating: {
+    guestSize: {
       type: Number,
       required: true,
-      min: 0,
-      max: 5,
-      default: 0,
+    },
+    phone: {
+      type: Number,
+      required: true,
+    },
+    bookAt: {
+      type: Date,
+      required: true,
     },
   },
   { timestamps: true }
 );
 
-export default mongoose.model("Review", reviewSchema);
+export default mongoose.model("Booking", bookingSchema);
