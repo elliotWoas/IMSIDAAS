@@ -29,3 +29,14 @@ export const getBooking = async (req, res) => {
     res.status(404).json({ success: false, message: "not found" });
   }
 };
+
+//get all booking
+export const getAllBooking = async (req, res) => {
+  try {
+    const books = await Booking.findById(id);
+
+    res.status(200).json({ success: true, message: "successful", data: books });
+  } catch (err) {
+    res.status(500).json({ success: false, message: "internal server error" });
+  }
+};
