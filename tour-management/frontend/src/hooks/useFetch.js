@@ -9,11 +9,28 @@ const useFetch = (url) => {
       setLoading(true);
 
       try {
-      } catch (err) {}
-    };
-  }, []);
+        const res = await fetch(url);
 
-  return;
+        if (!res.ok) {
+          setError("failed to fetch");
+          alert("Failed to fetch");
+        }
+        const result = await res.json();
+        setData(result.data);
+      } catch (err) {
+        setError(err.message);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [url]);
+
+  return {
+    data,
+    error,
+    loading,
+  };
 };
 
 export default useFetch;
