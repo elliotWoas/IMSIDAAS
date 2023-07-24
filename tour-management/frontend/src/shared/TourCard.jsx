@@ -39,14 +39,14 @@ const TourCard = ({ tour }) => {
 
           {/* name title location  in the box */}
           <h6 className="tour__title">
-            <Link to={`/tour/${id}`}>{title}</Link>
+            <Link to={`/tour/${_id}`}>{title}</Link>
           </h6>
           <div className="card__bottom d-flex align-items-center justify-content-between mt-3">
             <h6>
               ${price} <span>/per person</span>
             </h6>
             <button className="btn booking__btn">
-              <Link to={`/tour/${id}`}>Book Now</Link>
+              <Link to={`/tour/${_id}`}>Book Now</Link>
             </button>
           </div>
         </CardBody>
