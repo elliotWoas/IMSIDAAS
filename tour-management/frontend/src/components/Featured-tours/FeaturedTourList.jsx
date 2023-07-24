@@ -10,7 +10,7 @@ const FeaturedTourList = () => {
     data: featuredTours,
     loading,
     error,
-  } = useFetch(`${BASE_URL}tours/search/getFeaturedTours`);
+  } = useFetch(`${BASE_URL}/tours/search/getFeaturedTours`);
 
   console.log(featuredTours);
 
@@ -21,8 +21,8 @@ const FeaturedTourList = () => {
 
       {!loading &&
         !error &&
-        TourData?.map((tour) => (
-          <Col lg="3" className="mb-4" key={tour.id}>
+        featuredTours?.map((tour) => (
+          <Col lg="3" className="mb-4" key={tour._id}>
             <TourCard tour={tour} />
           </Col>
         ))}
