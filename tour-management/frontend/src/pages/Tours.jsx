@@ -41,6 +41,7 @@ const Tours = () => {
                 className="pagination d-flex align-items-center
                justify-content-center mt-4 gap-3"
               >
+                {/* change page */}
                 {[...Array(pageCount).keys()].map((number) => (
                   <span
                     key={number}
