@@ -36,7 +36,7 @@ const Tours = () => {
       </section>
       <section className="pt-0">
         <Container>
-          {!loading && !error && (
+          {!loading && !error && 
             <Row>
               {tours?.map((tour) => (
                 <Col lg="3" className="mb-4" key={tour._id}>
@@ -61,7 +61,7 @@ const Tours = () => {
                 </div>
               </Col>
             </Row>
-          )}
+          }
         </Container>
       </section>
       <Newsletter />
