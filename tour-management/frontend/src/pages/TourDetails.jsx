@@ -6,15 +6,12 @@ import tourData from "../assets/data/tours";
 import calculateAvgRating from "../utils/avgRating";
 import avatar from "../assets/images/avatar.jpg";
 import Booking from "../components/booking/Booking";
-import Newsletter from "../shared/Newsletter"
+import Newsletter from "../shared/Newsletter";
 
 const TourDetails = () => {
   const { id } = useParams();
   const reviewMsgRef = useRef("");
   const [tourRating, setTourRating] = useState(null);
-
-  //this is an static data later we will call our API and load our data from database
-  const tour = tourData.find((tour) => tour.id === id);
 
   // destructure properties from tour object
   const {
@@ -130,7 +127,7 @@ const TourDetails = () => {
                   </Form>
 
                   <ListGroup className="user__reviews">
-                    {reviews?.map(review => (
+                    {reviews?.map((review) => (
                       <div className="review__item">
                         <img src={avatar} alt="" />
 
