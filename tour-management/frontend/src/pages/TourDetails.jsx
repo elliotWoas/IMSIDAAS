@@ -13,6 +13,9 @@ const TourDetails = () => {
   const reviewMsgRef = useRef("");
   const [tourRating, setTourRating] = useState(null);
 
+  // fetch data from database
+  const { data: tour } = usefetch(`${BASE_URL}/tours/${id}`);
+
   // destructure properties from tour object
   const {
     photo,
@@ -36,7 +39,6 @@ const TourDetails = () => {
     e.preventDefault();
     const reviewText = reviewMsgRef.current.value;
 
-    alert(`${reviewText}, ${tourRating}`);
     // later will call our API
   };
   return (
