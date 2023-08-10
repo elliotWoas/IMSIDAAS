@@ -48,6 +48,9 @@ const TourDetails = () => {
     <>
       <section>
         <Container>
+          {
+            loading && <h4>Loading..........</h4>
+          }
           {!loading && !error && (
             <Row>
               <Col lg="8">
