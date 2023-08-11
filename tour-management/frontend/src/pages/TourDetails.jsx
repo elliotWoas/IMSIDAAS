@@ -7,6 +7,7 @@ import avatar from "../assets/images/avatar.jpg";
 import Booking from "../components/booking/Booking";
 import Newsletter from "../shared/Newsletter";
 import useFetch from './../hooks/useFetch';
+import { BASE_URL } from "./../utils/config";
 
 const TourDetails = () => {
   const { id } = useParams();
@@ -44,13 +45,16 @@ const TourDetails = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  }, [tour]);
   return (
     <>
       <section>
         <Container>
+        {
+            loading && <h4 className="text-center pt-5">Loading..........</h4>
+          }
           {
-            loading && <h4>Loading..........</h4>
+            error && <h4 className="text-center pt-5">{error}</h4>
           }
           {!loading && !error && (
             <Row>
