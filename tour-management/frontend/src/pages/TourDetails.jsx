@@ -6,6 +6,7 @@ import calculateAvgRating from "../utils/avgRating";
 import avatar from "../assets/images/avatar.jpg";
 import Booking from "../components/booking/Booking";
 import Newsletter from "../shared/Newsletter";
+import useFetch from './../hooks/useFetch';
 
 const TourDetails = () => {
   const { id } = useParams();
@@ -13,7 +14,7 @@ const TourDetails = () => {
   const [tourRating, setTourRating] = useState(null);
 
   // fetch data from database
-  const { data: tour, loading, error } = usefetch(`${BASE_URL}/tours/${id}`);
+  const { data: tour, loading, error } = useFetch(`${BASE_URL}/tours/${id}`);
 
   // destructure properties from tour object
   const {
