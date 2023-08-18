@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import { Container, Row, Col, Form, FormGroup, Button } from "reactstrap";
 import { Link } from "react-router-dom";
@@ -6,6 +6,9 @@ import "../styles/login.css";
 
 import registerImg from "../assets/images/register.png";
 import useIcon from "../assets/images/user.png";
+
+import { AuthContext } from '../context/AuthContext'
+import { BASE_URL } from './../utils/config'
 
 const Register = () => {
   const [credentials, setCredentials] = useState({
@@ -18,7 +21,7 @@ const Register = () => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
   };
 
