@@ -7,15 +7,17 @@ import "../styles/login.css";
 import registerImg from "../assets/images/register.png";
 import useIcon from "../assets/images/user.png";
 
-import { AuthContext } from '../context/AuthContext'
-import { BASE_URL } from './../utils/config'
+import { AuthContext } from "../context/AuthContext";
+import { BASE_URL } from "./../utils/config";
 
 const Register = () => {
   const [credentials, setCredentials] = useState({
     userName: undefined,
     email: undefined,
-    password: undefined
+    password: undefined,
   });
+
+  const { dispatch } = useContext(AuthContext);
 
   const handleChange = (e) => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -23,6 +25,18 @@ const Register = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
+
+    try {
+    } catch (err) {
+      const res = await fetch(`${BASE_URL}/auth/register`, {
+        method: "post",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(credentials),
+      });
+      const result = await res.json();
+
+      if (!res.ok) alert(result.message);
+    }
   };
 
   return (
@@ -42,7 +56,7 @@ const Register = () => {
                 <h2>Register</h2>
 
                 <Form onSubmit={handleClick}>
-                <FormGroup>
+                  <FormGroup>
                     <input
                       type="text"
                       placeholder="Username"
@@ -88,5 +102,4 @@ const Register = () => {
   );
 };
 
-
-export default Register
+export default Register;
