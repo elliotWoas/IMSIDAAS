@@ -27,7 +27,6 @@ const Register = () => {
     e.preventDefault();
 
     try {
-    } catch (err) {
       const res = await fetch(`${BASE_URL}/auth/register`, {
         method: "post",
         headers: { "content-type": "application/json" },
@@ -36,7 +35,7 @@ const Register = () => {
       const result = await res.json();
 
       if (!res.ok) alert(result.message);
-    }
+    } catch (err) {}
   };
 
   return (
