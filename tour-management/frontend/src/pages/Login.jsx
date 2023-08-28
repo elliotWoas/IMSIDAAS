@@ -17,12 +17,21 @@ const Login = () => {
     password: undefined,
   });
 
+  const { dispatch } = useContext(AuthContext);
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
+
+    try{
+
+    }catch (err){
+      
+    }
   };
 
   return (
