@@ -27,7 +27,18 @@ const Login = () => {
   const handleClick = async (e) => {
     e.preventDefault();
 
+    dispatch({type:'LOGIN_START'})
+
     try{
+
+    const res = await fetch(`${BASE_URL}/auth/login`, {
+      method: "post",
+      headers: {
+        "content-type": "application/json",
+      },
+      credentials:'include',
+      body: JSON.stringify(credentials),
+    })
 
     }catch (err){
       
