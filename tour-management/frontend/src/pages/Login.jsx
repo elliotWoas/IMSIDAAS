@@ -12,7 +12,6 @@ import { BASE_URL } from "./../utils/config";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
-    
     email: undefined,
     password: undefined,
   });
@@ -27,21 +26,26 @@ const Login = () => {
   const handleClick = async (e) => {
     e.preventDefault();
 
-    dispatch({type:'LOGIN_START'})
+    dispatch({ type: "LOGIN_START" });
 
-    try{
+    try {
+      const res = await fetch(`${BASE_URL}/auth/login`, {
+        method: "post",
+        headers: {
+          "content-type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify(credentials),
+      });
+      const result = await res.json();
+      if (!res.ok) alert(result.message);
 
-    const res = await fetch(`${BASE_URL}/auth/login`, {
-      method: "post",
-      headers: {
-        "content-type": "application/json",
-      },
-      credentials:'include',
-      body: JSON.stringify(credentials),
-    })
+      console.log(result.data);
 
-    }catch (err){
-      
+      dispatch({ type: "LOGIN_SUCCESS", payload: result.data });
+      navigate("/");
+    } catch (err) {
+      dispatch({ type: "LOGIN_FAILURE", payload: err.message });
     }
   };
 
