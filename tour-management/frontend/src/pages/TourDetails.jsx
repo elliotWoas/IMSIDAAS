@@ -66,7 +66,7 @@ const TourDetails = () => {
                         <i
                           class="ri-star-s-fill"
                           style={{ color: "var(--secondary-color)" }}
-                        ></i>{" "}
+                        ></i>
                         {avgRating === 0 ? null : avgRating}
                         {totalRating === 0 ? (
                           "Not rated"
@@ -82,10 +82,10 @@ const TourDetails = () => {
 
                     <div className="tour__extra-details">
                       <span>
-                        <i class="ri-map-pin-2-line"></i> {city}{" "}
+                        <i class="ri-map-pin-2-line"></i> {city}
                       </span>
                       <span>
-                        <i class="ri-money-dollar-circle-line"></i> ${price}{" "}
+                        <i class="ri-money-dollar-circle-line"></i> ${price}
                         /per person
                       </span>
                       <span>
@@ -137,7 +137,7 @@ const TourDetails = () => {
                     </Form>
 
                     <ListGroup className="user__reviews">
-                      {reviews?.map((review) => (
+                      {reviews?.map(review => (
                         <div className="review__item">
                           <img src={avatar} alt="" />
 
