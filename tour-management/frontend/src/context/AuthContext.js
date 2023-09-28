@@ -1,10 +1,11 @@
 import { createContext, useEffect, useReducer } from "react";
 
+// const userString = localStorage.getItem('user')
+// const user = userString ? JSON.parse(userString) : null;
+// console.log(localStorage.getItem("user"));
 const initial_state = {
-  user:
-    localStorage.getItem("user") !== undefined
-      ? JSON.parse(localStorage.getItem("user"))
-      : null,
+  user: null,
+  //  localStorage.getItem("user") !== undefined ? JSON.parse(localStorage.getItem("user")) :null,
   loading: false,
   error: null,
 };
@@ -16,12 +17,12 @@ const AuthReducer = (state, action) => {
     case "LOGIN_START":
       return {
         user: null,
-        loading: false,
+        loading: true,
         error: null,
       };
     case "LOGIN_SUCCESS":
       return {
-        user: action.playload,
+        user: action.payload,
         loading: false,
         error: null,
       };
@@ -29,7 +30,7 @@ const AuthReducer = (state, action) => {
       return {
         user: null,
         loading: false,
-        error: action.playload,
+        error: action.payload,
       };
     case "REGISTER_SUCCESS":
       return {
