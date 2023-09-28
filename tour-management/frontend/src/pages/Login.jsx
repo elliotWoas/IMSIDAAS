@@ -19,8 +19,8 @@ const Login = () => {
   const { dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+  const handleChange = e => {
+    setCredentials(prev => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
   const handleClick = async (e) => {
