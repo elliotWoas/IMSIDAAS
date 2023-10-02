@@ -11,7 +11,7 @@
     "react-dom": "^18.2.0",
     "react-responsive-masonry": "^2.1.7",
     "react-router-dom": "^6.6.1",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "react-slick": "^0.29.0",
     "reactstrap": "^9.1.5",
     "remixicon": "^2.5.0",
