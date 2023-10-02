@@ -4,8 +4,7 @@ import { createContext, useEffect, useReducer } from "react";
 // const user = userString ? JSON.parse(userString) : null;
 // console.log(localStorage.getItem("user"));
 const initial_state = {
-  user: null,
-  //  localStorage.getItem("user") !== undefined ? JSON.parse(localStorage.getItem("user")) :null,
+  user: localStorage.getItem("user") !== undefined ? JSON.parse(localStorage.getItem("user")) : null,
   loading: false,
   error: null,
 };
