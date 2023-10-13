@@ -35,6 +35,10 @@ const Booking = ({ tour, avgRating }) => {
     e.preventDefault();
 
     try {
+      // if user is not logged in
+      if (!user || user === undefined || user === null) {
+        return alert("plase sign in");
+      }
 
     } catch (err) {
 
