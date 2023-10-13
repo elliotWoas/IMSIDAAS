@@ -43,8 +43,24 @@ const Booking = ({ tour, avgRating }) => {
         return alert("plase sign in");
       }
 
-    } catch (err) {
+      const res = await fetch(`${BASE_URL}/booking`, {
+        method: "post",
+        headers: {
+          "content-type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify(booking),
+      });
 
+      const result = await res.json();
+
+      if (!res.ok) {
+        return alert(result.message);
+      }
+      //post in thank you url
+      navigate("/thank-you");
+    } catch (err) {
+      alert(err.message);
     }
   };
 
