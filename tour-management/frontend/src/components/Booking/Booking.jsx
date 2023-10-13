@@ -34,6 +34,9 @@ const Booking = ({ tour, avgRating }) => {
   const handleClick = async (e) => {
     e.preventDefault();
 
+    console.log(booking);
+    console.log(tour);
+
     try {
       // if user is not logged in
       if (!user || user === undefined || user === null) {
@@ -65,7 +68,7 @@ const Booking = ({ tour, avgRating }) => {
             <input
               type="text"
               placeholder="Full Name"
-              id="fullname"
+              id="fullName"
               required
               onChange={handleChange}
             />
