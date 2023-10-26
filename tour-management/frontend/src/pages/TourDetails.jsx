@@ -49,6 +49,32 @@ const TourDetails = () => {
         alert("Please sgin in");
       }
 
+      const reviewObj = { 
+        username: user?.username,
+        reviewText,
+        rating: tourRating,
+      };
+
+      const res = await fetch(`${BASE_URL}/review/${id}`, {
+        method: "post",
+        headers: {
+          "cosntent-type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify(reviewObj),
+      });
+
+      const result = await res.json();
+      if (!result.ok) {
+        return alert(result.message);
+      }
+
+      alert(result.message);
+    } catch (err) {
+      alert(err.message);
+    }
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [tour]);
