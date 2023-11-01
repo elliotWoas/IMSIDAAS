@@ -97,4 +97,7 @@ ul {
   .btn-dark {
     padding: 0.2rem 1.1rem !important;
   }
+  section {
+    padding: 40px 0;
+  }
 }
