@@ -139,10 +139,26 @@
   .hero__video-box {
     display: block;
   }
+
+  .services__title,
+  .featured__tour-title,
+  .gallery__title,
+  .testimoial__title,
+  .experience__content h2 {
+    font-size: 2rem;
+  }
 }
 
-@media only screen and (max-width: 576px){
+@media only screen and (max-width: 576px) {
   .hero__content h1 {
     font-size: 1.8rem;
+  }
+
+  .services__title,
+  .featured__tour-title,
+  .gallery__title,
+  .testimoial__title,
+  .experience__content h2 {
+    font-size: 1.5rem;
   }
 }
