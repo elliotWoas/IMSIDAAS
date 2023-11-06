@@ -65,7 +65,7 @@ const TourDetails = () => {
       });
 
       const result = await res.json();
-      if (!result.ok) {
+      if (!res.ok) {
         return alert(result.message);
       }
 
@@ -178,7 +178,7 @@ const TourDetails = () => {
                               <div>
                                 <h5>{review.username}</h5>
                                 <p>
-                                  {new Date("05-18-2023").toLocaleDateString(
+                                  {new Date(review.createdAt).toLocaleDateString(
                                     "en-US",
                                     options
                                   )}
