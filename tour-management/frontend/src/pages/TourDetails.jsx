@@ -73,6 +73,8 @@ const TourDetails = () => {
     } catch (err) {
       alert(err.message);
     }
+    //refresh the page after commenting
+    window.location.reload();
   };
 
   useEffect(() => {
@@ -162,6 +164,7 @@ const TourDetails = () => {
                         <button
                           className="btn primary__btn text-white"
                           type="submit"
+                          // onClick={ refreshPage }
                         >
                           Submit
                         </button>
