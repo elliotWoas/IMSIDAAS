@@ -164,7 +164,6 @@ const TourDetails = () => {
                         <button
                           className="btn primary__btn text-white"
                           type="submit"
-                          // onClick={ refreshPage }
                         >
                           Submit
                         </button>
