@@ -32,6 +32,10 @@ const connect = async () => {
   }
 };
 
+app.get('/', (req, res) => {
+  res.send("welcome to backend test!!")
+});
+
 // midleware
 app.use(express.json());
 app.use(cors(corsOptions));
