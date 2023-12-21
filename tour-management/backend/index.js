@@ -13,8 +13,10 @@ import bookingRoute from "./routes/bookings.js";
 
 const app = express();
 const port = process.env.PORT;
+// add domain 
 const corsOptions = {
-  origin: true,
+  origin: ["https://imsidaas.vercel.app"],
+  method: ["POST", "GET"],
   credentials: true,
 };
 
