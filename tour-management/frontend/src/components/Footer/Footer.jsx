@@ -55,7 +55,7 @@ const Footer = () => {
                   </Link>
                 </span>
                 <span>
-                  <Link to="#">
+                  <Link to="https://github,com/elliotwoas">
                     <i class="ri-github-fill"></i>
                   </Link>
                 </span>
@@ -102,7 +102,7 @@ const Footer = () => {
                   </span>
                   Address:
                 </h6>
-                <p className="mb-0">Ardbil, iran</p>
+                <p className="mb-0">tehran, iran</p>
               </ListGroupItem>
               <ListGroupItem className="ps-0 border-0 d-flex align-items-center gap-3">
                 <h6 className="mb-0 d-flex align-items-center gap-2">
