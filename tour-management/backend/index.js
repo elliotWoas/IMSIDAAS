@@ -42,11 +42,11 @@ app.get('/', (req, res) => {
 app.use(express.json());
 app.use(cors(corsOptions));
 app.use(cookieParser());
-app.use("/m/api/v1/auth", authRoute);
-app.use("/m/api/v1/tours", tourRoute);
-app.use("/m/api/v1/users", userRoute);
-app.use("/m/api/v1/review", reviewRoute);
-app.use("/m/api/v1/booking", bookingRoute);
+app.use("/api/auth", authRoute);
+app.use("/api/tours", tourRoute);
+app.use("/api/users", userRoute);
+app.use("/api/review", reviewRoute);
+app.use("/api/booking", bookingRoute);
 
 app.listen(port, () => {
   connect();
