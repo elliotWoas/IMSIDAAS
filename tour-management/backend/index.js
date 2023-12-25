@@ -20,19 +20,9 @@ const corsOptions = {
   credentials: true,
 };
 
-// data base connection
-mongoose.set("strictQuery", false);
-const connect = async () => {
-  try {
-    await mongoose.connect(process.env.DB, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    console.log("MongoDB database connected");
-  } catch (err) {
-    console.log("MongoDB database connection failed");
-  }
-};
+mongoose.connect(process.env.MONGODB_URL).then(()=>{
+  console.log("connected")
+})
 
 app.get('/', (req, res) => {
   res.send("welcome to backend test!!")
@@ -48,7 +38,6 @@ app.use("/api/users", userRoute);
 app.use("/api/review", reviewRoute);
 app.use("/api/booking", bookingRoute);
 
-app.listen(port, () => {
-  connect();
+app.listen(port, () => { 
   console.log("server listening on port", port);
 });
