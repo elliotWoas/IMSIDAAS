@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 import env from "dotenv";
 env.config();
+const JWT_SECRET_KEY = himynameis1382eefuck
 
 const verifyToken = (req, res, next) => {
   const token = req.cookies.accessToken;
@@ -13,7 +14,7 @@ const verifyToken = (req, res, next) => {
   }
 
   //if token is exist, then verify the token
-  jwt.verify(token, process.env.JWT_SECRET_KEY, (err, user) => {
+  jwt.verify(token, JWT_SECRET_KEY, (err, user) => {
     if (err) {
       return res
         .status(401)
