@@ -1,7 +1,6 @@
 import User from "../models/User.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-const JWT_SECRET_KEY = himynameis1382eefuck;
 
 //user registeration
 export const register = async (req, res) => {
@@ -55,7 +54,7 @@ export const login = async (req, res) => {
     //create jwt token
     const token = jwt.sign(
       { id: user._id, role: user.role },
-      JWT_SECRET_KEY,
+      process.env.JWT_SECRET_KEY,
       { expiresIn: "15d" }
     );
 
