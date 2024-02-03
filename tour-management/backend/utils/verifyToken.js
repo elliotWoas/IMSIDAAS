@@ -19,15 +19,14 @@ const verifyToken = (req, res, next) => {
         .status(401)
         .json({ success: false, message: "token is invalid" });
     }
-
-    req.user = user;
+    req.users = user;
     next();
   });
 };
 
 export const verifyUser = (req, res, next) => {
   verifyToken(req, res, next, () => {
-    if (req.user.id === req.params.id || req.user.role === "admin") {
+    if (req.users.id === req.params.id || req.users.role === "admin") {
       next();
     } else {
       return res
@@ -39,7 +38,7 @@ export const verifyUser = (req, res, next) => {
 
 export const verifyAdmin = (req, res, next) => {
   verifyToken(req, res, next, () => {
-    if (req.user.role === "admin") {
+    if (req.users.role === "admin") {
       next();
     } else {
       return res
