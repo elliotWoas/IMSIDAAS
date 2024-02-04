@@ -6,7 +6,7 @@ import env from "dotenv";
 env.config();
 
 import tourRoute from "./routes/tours.js";
-import userRoute from "./routes/users.js";
+import userRoute from "./routes/user.js";
 import authRoute from "./routes/auth.js";
 import reviewRoute from "./routes/reviews.js";
 import bookingRoute from "./routes/bookings.js";
