@@ -3,7 +3,7 @@ import env from "dotenv";
 env.config();
 
 const verifyToken = (req, res, next) => {
-  const token = req.cookies.accessToken;
+  const token = req.cookies.userToken;
 
   if (!token) {
     return res.status(401).json({
