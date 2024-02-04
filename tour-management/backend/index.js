@@ -13,19 +13,20 @@ import bookingRoute from "./routes/bookings.js";
 
 const app = express();
 const port = process.env.PORT;
-// add domain 
+// add domain
 const corsOptions = {
   origin: ["https://imsidaas.vercel.app"],
+  "Access-Control-Allow-Origin": "*",
   method: ["POST", "GET"],
   credentials: true,
 };
 
-mongoose.connect(process.env.MONGODB_URL).then(()=>{
-  console.log("connected")
-})
+mongoose.connect(process.env.MONGODB_URL).then(() => {
+  console.log("connected");
+});
 
-app.get('/', (req, res) => {
-  res.send("welcome to backend test!!")
+app.get("/", (req, res) => {
+  res.send("welcome to backend test!!");
 });
 
 // midleware
@@ -38,6 +39,6 @@ app.use("/api/users", userRoute);
 app.use("/api/review", reviewRoute);
 app.use("/api/booking", bookingRoute);
 
-app.listen(port, () => { 
+app.listen(port, () => {
   console.log("server listening on port", port);
 });
