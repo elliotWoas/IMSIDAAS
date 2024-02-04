@@ -16,7 +16,7 @@ const port = process.env.PORT;
 // add domain
 const corsOptions = {
   origin: ["https://imsidaas.vercel.app"],
-  "Access-Control-Allow-Origin": "*",
+  mode: 'no-cors',
   method: ["POST", "GET"],
   credentials: true,
 };
@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 });
 
 // midleware
-app.use(express.json());
+app.use(exprress.json());
 app.use(cors(corsOptions));
 app.use(cookieParser());
 app.use("/api/auth", authRoute);
