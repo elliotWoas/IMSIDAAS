@@ -16,8 +16,7 @@ const port = process.env.PORT;
 // add domain
 const corsOptions = {
   origin: ["https://imsidaas.vercel.app"],
-  mode: "no-cors",
-  method: ["POST", "GET"],
+  method: ["POST", "GET", "PUT", "DELETE", "PATCH"],
   credentials: true,
 };
 
