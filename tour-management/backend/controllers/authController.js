@@ -73,6 +73,7 @@ export const login = async (req, res) => {
         path: "/api/auth", //path to the cookie
         secure: true, // Cookie is sent only over HTTPS
         // sameSite: "strict", // Cookie is not sent in cross-site requests
+        sameSite: "None",
         expires: token.expiresIn,
       })
       .status(200)
