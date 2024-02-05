@@ -36,7 +36,6 @@ const Login = () => {
           Path: "/api/auth",
           HttpOnly: "ture",
           secure: true,
-          SameSite: "false",
           "content-type": "application/json",
         },
         credentials: "include",

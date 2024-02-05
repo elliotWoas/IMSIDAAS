@@ -71,7 +71,7 @@ export const login = async (req, res) => {
         httpOnly: true, // Cookie is accessible only by the server
         path: "/api/auth", //path to the cookie
         secure: true, // Cookie is sent only over HTTPS
-        sameSite: "false", // Cookie is not sent in cross-site requests
+        sameSite: "strict", // Cookie is not sent in cross-site requests
         expires: token.expiresIn,
       })
       .status(200)
