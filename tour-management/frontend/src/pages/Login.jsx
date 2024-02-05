@@ -19,8 +19,8 @@ const Login = () => {
   const { dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleChange = e => {
-    setCredentials(prev => ({ ...prev, [e.target.id]: e.target.value }));
+  const handleChange = (e) => {
+    setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
   const handleClick = async (e) => {
@@ -32,6 +32,11 @@ const Login = () => {
       const res = await fetch(`${BASE_URL}/auth/login`, {
         method: "post",
         headers: {
+          userToken: "",
+          Path: "/api/auth",
+          HttpOnly: "ture",
+          secure: true,
+          SameSite: "Strict",
           "content-type": "application/json",
         },
         credentials: "include",
