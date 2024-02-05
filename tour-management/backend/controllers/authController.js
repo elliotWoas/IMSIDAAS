@@ -59,27 +59,28 @@ export const login = async (req, res) => {
     );
 
     // set token in the browser cookies and send the response to the client
-    res.setHeader('Set-Cookie', `userToken=${token}; Path=/api/auth; HttpOnly; SameSite=Strict`).status(200)
-    .json({
-      token,
-      success: true,
-      data: { ...rest },
-      role,
-    });;
-    // res
-    //   .cookie("userToken", token, {
-    //     httpOnly: true, // Cookie is accessible only by the server
-    //     secure: true, // Cookie is sent only over HTTPS
-    //     sameSite: "strict", // Cookie is not sent in cross-site requests
-    //     expires: token.expiresIn,
-    //   })
-    //   .status(200)
-    //   .json({
-    //     token,
-    //     success: true,
-    //     data: { ...rest },
-    //     role,
-    //   });
+    // res.setHeader('Set-Cookie', `userToken=${token}; Path=/api/auth; HttpOnly; SameSite=Strict`).status(200)
+    // .json({
+    //   token,
+    //   success: true,
+    //   data: { ...rest },
+    //   role,
+    // });;
+    res
+      .cookie("userToken", token, {
+        httpOnly: true, // Cookie is accessible only by the server
+        path: "/api/auth", //path to the cookie
+        secure: true, // Cookie is sent only over HTTPS
+        sameSite: "false", // Cookie is not sent in cross-site requests
+        expires: token.expiresIn,
+      })
+      .status(200)
+      .json({
+        token,
+        success: true,
+        data: { ...rest },
+        role,
+      });
   } catch (err) {
     res.status(500).json({
       success: false,
