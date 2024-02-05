@@ -10,7 +10,8 @@
     {
       "src": "/(.*)",
       "headers": {
-        "Set-Cookie": "*"
+        "Set-Cookie": "*",
+        "Access-Control-Allow-Origin": "*"
       },
       "dest": "/index.js"
     }
