@@ -67,6 +67,10 @@ export const login = async (req, res) => {
     //   data: { ...rest },
     //   role,
     // });;
+
+    const expirationDate = new Date();
+  expirationDate.setDate(expirationDate.getDate() + 15); 
+
     res
       .cookie("userToken", token, {
         httpOnly: true, // Cookie is accessible only by the server
@@ -74,7 +78,8 @@ export const login = async (req, res) => {
         secure: true, // Cookie is sent only over HTTPS
         // sameSite: "strict", // Cookie is not sent in cross-site requests
         sameSite: "None",
-        expires: token.expiresIn,
+        expires: expirationDate,
+        // expires: token.expiresIn,
       })
       .status(200)
       .json({
