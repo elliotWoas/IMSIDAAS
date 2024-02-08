@@ -72,11 +72,11 @@ export const login = async (req, res) => {
     res
       .cookie("userToken", token, {
         // sameSite: "strict", // Cookie is not sent in cross-site requests
-        path: "/api/auth", //path to the cookie
-        sameSite: "None",
-        httpOnly: true, // Cookie is accessible only by the server
-        sameSite: "Lax", // Allow cross-site usage with some restrictions
         maxAge: 15 * 24 * 60 * 60 * 1000, // 15 days in milliseconds
+        sameSite: "Lax", // Allow cross-site usage with some restrictions
+        path: "/api/auth", //path to the cookie
+        httpOnly: true, // Cookie is accessible only by the server
+        // sameSite: "None",
         // secure: true, // Cookie is sent only over HTTPS
         // expires: expirationDate,
         // expires: token.expiresIn,
