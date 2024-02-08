@@ -1,7 +1,7 @@
 import User from "../models/User.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-const JWT_SECRET_KEY="himynameis1382eefuck"
+const JWT_SECRET_KEY = "himynameis1382eefuck";
 
 //user registeration
 export const register = async (req, res) => {
@@ -53,11 +53,9 @@ export const login = async (req, res) => {
 
     const { password, role, ...rest } = user._doc;
     //create jwt token
-    const token = jwt.sign(
-      { id: user._id, role: user.role },
-        JWT_SECRET_KEY,
-      { expiresIn: "15d" }
-    );
+    const token = jwt.sign({ id: user._id, role: user.role }, JWT_SECRET_KEY, {
+      expiresIn: "15d",
+    });
 
     // set token in the browser cookies and send the response to the client
     // res.setHeader('Set-Cookie', `userToken=${token}; Path=/api/auth; HttpOnly; SameSite=Strict`).status(200)
@@ -69,16 +67,18 @@ export const login = async (req, res) => {
     // });;
 
     const expirationDate = new Date();
-  expirationDate.setDate(expirationDate.getDate() + 15); 
+    expirationDate.setDate(expirationDate.getDate() + 15);
 
     res
       .cookie("userToken", token, {
-        httpOnly: true, // Cookie is accessible only by the server
-        path: "/api/auth", //path to the cookie
-        secure: true, // Cookie is sent only over HTTPS
         // sameSite: "strict", // Cookie is not sent in cross-site requests
+        path: "/api/auth", //path to the cookie
         sameSite: "None",
-        expires: expirationDate,
+        httpOnly: true, // Cookie is accessible only by the server
+        sameSite: "Lax", // Allow cross-site usage with some restrictions
+        maxAge: 15 * 24 * 60 * 60 * 1000, // 15 days in milliseconds
+        // secure: true, // Cookie is sent only over HTTPS
+        // expires: expirationDate,
         // expires: token.expiresIn,
       })
       .status(200)
