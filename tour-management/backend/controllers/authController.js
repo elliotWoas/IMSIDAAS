@@ -72,14 +72,20 @@ export const login = async (req, res) => {
     res
       .cookie("userToken", token, {
         // sameSite: "strict", // Cookie is not sent in cross-site requests
-        maxAge: 15 * 24 * 60 * 60 * 1000, // 15 days in milliseconds
-        sameSite: "Lax", // Allow cross-site usage with some restrictions
-        path: "/api/auth", //path to the cookie
-        httpOnly: true, // Cookie is accessible only by the server
+        // maxAge: 15 * 24 * 60 * 60 * 1000, // 15 days in milliseconds
+        // sameSite: "Lax", // Allow cross-site usage with some restrictions
+        // path: "/api/auth", //path to the cookie
+        // httpOnly: true, // Cookie is accessible only by the server
         // sameSite: "None",
         // secure: true, // Cookie is sent only over HTTPS
         // expires: expirationDate,
         // expires: token.expiresIn,
+        httpOnly: true, // Cookie is accessible only by the server
+        path: "/", // Set root path to allow access from all routes
+        secure: true, // Cookie is sent only over HTTPS
+        sameSite: "None", // Allow cross-site usage
+        expires: expirationDate, // Expiration date of the cookie
+        domain: ".vercel.app", // Set common domain between server and client
       })
       .status(200)
       .json({
