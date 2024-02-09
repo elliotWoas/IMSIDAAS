@@ -31,13 +31,13 @@ const Login = () => {
     try {
       const res = await fetch(`${BASE_URL}/auth/login`, {
         method: "post",
+        credentials: "include",
         headers: {
           Path: "/",
           HttpOnly: "ture",
           secure: true,
           "content-type": "application/json",
         },
-        credentials: "include",
         body: JSON.stringify(credentials),
       });
       const result = await res.json();
