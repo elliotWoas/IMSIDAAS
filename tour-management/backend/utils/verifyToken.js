@@ -8,7 +8,7 @@ const JWT_SECRET_KEY = "himynameis1382eefuck";
 
 // Configure express-session middleware
 const sessionMiddleware = session({
-  secret:  JWT_SECRET_KEY, // Change this to a secure secret
+  secret:  JWT_SECRET_KEY, 
   resave: false,
   saveUninitialized: true
 });
