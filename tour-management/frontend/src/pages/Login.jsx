@@ -32,8 +32,7 @@ const Login = () => {
       const res = await fetch(`${BASE_URL}/auth/login`, {
         method: "post",
         headers: {
-          userToken: "",
-          Path: "/api/auth",
+          Path: "/",
           HttpOnly: "ture",
           secure: true,
           "content-type": "application/json",
