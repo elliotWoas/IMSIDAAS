@@ -36,7 +36,11 @@ app.use(cors(corsOptions));
 app.use(session({
   secret: process.env.JWT_SECRET_KEY || 'default-secret-key',
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
+  cookie: {
+    secure: true,
+    sameSite: 'None'
+  }
 }));
 // app.use(cookieParser());
 app.use("/api/auth", authRoute);
