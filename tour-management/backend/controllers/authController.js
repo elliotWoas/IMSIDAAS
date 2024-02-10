@@ -54,7 +54,7 @@ export const login = async (req, res) => {
     const { password, role, ...rest } = user._doc;
     //create jwt token
     const token = jwt.sign({ id: user._id, role: user.role }, JWT_SECRET_KEY, {
-      expiresIn: "15d",
+      expiresIn: "120s",
     });
 
     // set token in the browser cookies and send the response to the client
@@ -73,13 +73,8 @@ export const login = async (req, res) => {
       .cookie("userToken", token, {
         // sameSite: "strict", // Cookie is not sent in cross-site requests
         // maxAge: 15 * 24 * 60 * 60 * 1000, // 15 days in milliseconds
-        // sameSite: "Lax", // Allow cross-site usage with some restrictions
-        // path: "/api/auth", //path to the cookie
-        // httpOnly: true, // Cookie is accessible only by the server
-        // sameSite: "None",
-        // secure: true, // Cookie is sent only over HTTPS
-        // expires: expirationDate,
-        // expires: token.expiresIn,
+        // sameSite: "Lax", // Allow cross-site usage with some restriction
+        // expires: token.expiresIn
         httpOnly: true, // Cookie is accessible only by the server
         path: "/", // Set root path to allow access from all routes
         secure: true, // Cookie is sent only over HTTPS
