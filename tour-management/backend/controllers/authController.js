@@ -80,7 +80,7 @@ export const login = async (req, res) => {
         secure: true, // Cookie is sent only over HTTPS
         sameSite: "None", // Allow cross-site usage
         expires: expirationDate, // Expiration date of the cookie
-        domain: ".vercel.app", // Set common domain between server and client
+        // domain: ".vercel.app", // Set common domain between server and client
       })
       .status(200)
       .json({

@@ -33,10 +33,10 @@ const Login = () => {
         method: "post",
         credentials: "include",
         headers: {
-          Path: "/",
-          HttpOnly: "ture",
+          path: "/",
+          httpOnly: true,
           secure: true,
-          "content-type": "application/json",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(credentials),
       });
